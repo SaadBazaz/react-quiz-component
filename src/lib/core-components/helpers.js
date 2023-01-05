@@ -1,9 +1,9 @@
-import { marked } from 'marked';
+import marked from 'marked';
 import dompurify from 'dompurify';
 
 export const rawMarkup = (data) => {
   const sanitizer = dompurify.sanitize;
-  return { __html: marked.parse(sanitizer(data)) };
+  return { __html: marked(sanitizer(data)) };
 };
 
 export const checkAnswer = (index, correctAnswer, answerSelectionType, {
