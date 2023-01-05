@@ -3,6 +3,7 @@ import dompurify from 'dompurify';
 
 export const rawMarkup = (data) => {
   const sanitizer = dompurify.sanitize;
+  console.log("marked is:", marked);
   return { __html: marked(sanitizer(data)) };
 };
 
