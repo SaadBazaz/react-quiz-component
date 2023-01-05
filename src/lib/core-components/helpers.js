@@ -1,9 +1,9 @@
-const marked = require('marked');
+const {marked} = require('marked');
 import dompurify from 'dompurify';
 
 export const rawMarkup = (data) => {
   const sanitizer = dompurify.sanitize;
-  console.log("marked is:", marked);
+  // console.log("marked is:", marked);
   return { __html: marked(sanitizer(data)) };
 };
 
